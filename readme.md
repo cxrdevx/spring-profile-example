@@ -37,3 +37,21 @@ services:
     environment:
       - "SPRING_PROFILES_ACTIVE=QA"
 ````
+
+## Kubernetes
+
+Activar profile desde kubernetes
+
+````yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example
+spec:
+  containers:
+  - name: example
+    image: bash
+    env:
+    - name: SPRING_PROFILES_ACTIVE
+      value: "dev"
+````
